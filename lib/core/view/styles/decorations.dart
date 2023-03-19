@@ -17,5 +17,5 @@ class Decorations {
     fontSize: 10,
   );
 
-  static const buttonShape = RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(90)));
+  static const buttonShape = RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12)));
 }
