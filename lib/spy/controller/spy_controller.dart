@@ -1,15 +1,26 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../core/constants/rout_path.dart';
 
 class SpyController extends GetxController {
+  ScrollController scrollController = ScrollController();
   RxInt players = 4.obs;
   RxInt minutes = 5.obs;
   RxInt spies = 1.obs;
 
   static SpyController get to => Get.find();
 
-  startGrantingRoles () => Get.toNamed(RoutePath.role);
+  @override
+  void onReady() {
+    scrollController.animateTo(
+      scrollController.position.maxScrollExtent,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.bounceIn,
+    );
+  }
+
+  startGrantingRoles() => Get.toNamed(RoutePath.role);
 
   addPlayer() => players.value++;
 

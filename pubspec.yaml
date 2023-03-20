@@ -34,7 +34,6 @@ dependencies:
 
   get: ^4.6.5
   responsive_framework: ^0.2.0
-  flutter_svg: any
   flutter_ringtone_player: ^3.2.0
   get_storage: ^2.1.1
 

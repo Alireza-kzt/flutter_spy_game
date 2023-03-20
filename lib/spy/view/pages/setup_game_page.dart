@@ -13,6 +13,7 @@ class SetupGamePage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
+          controller: SpyController.to.scrollController,
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
             children: [
