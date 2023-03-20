@@ -20,7 +20,7 @@ class SpyGame extends StatelessWidget {
       textDirection: TextDirection.rtl,
       getPages: Routs.routs,
       locale: const Locale('fa', 'IR'),
-      initialRoute: RoutPath.root,
+      initialRoute: RoutePath.root,
       builder: (context, child) => MediaQuery(
         data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
         child: ResponsiveWrapper.builder(

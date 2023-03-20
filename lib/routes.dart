@@ -12,17 +12,17 @@ import 'spy/view/pages/role_granting_page.dart';
 class Routs {
   static List<GetPage> routs = <GetPage>[
     GetPage(
-      name: RoutPath.root,
+      name: RoutePath.root,
       page: () => const SetupGamePage(),
       binding: SetupBindings(),
     ),
     GetPage(
-      name: RoutPath.role,
+      name: RoutePath.role,
       page: () => const RoleGrantingPage(),
       binding: RoleBindings(),
     ),
     GetPage(
-      name: RoutPath.timer,
+      name: RoutePath.timer,
       page: () => const TimerPage(),
       binding: SpyTimerBindings(),
     ),

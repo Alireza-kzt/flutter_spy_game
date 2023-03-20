@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
 
-import 'controller/setup_controller.dart';
+import 'controller/spy_controller.dart';
 
 class SetupBindings implements Bindings {
   @override
   void dependencies() {
-    Get.put(SetupController());
+    Get.put(SpyController());
   }
 }

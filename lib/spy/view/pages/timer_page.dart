@@ -19,7 +19,7 @@ class TimerPage extends StatelessWidget {
             foregroundColor: MaterialStateProperty.all(Theme.of(context).colorScheme.onBackground),
             side: MaterialStateProperty.all(BorderSide(color: Theme.of(context).colorScheme.primaryContainer)),
           ),
-          onPressed: () => Get.offNamed(RoutPath.root),
+          onPressed: () => Get.offNamed(RoutePath.root),
         ),
       ),
       body: SafeArea(

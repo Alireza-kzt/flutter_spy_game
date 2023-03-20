@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'incr_and_decr_input_controller.dart';
 
-// ignore: must_be_immutable
-class IncreaseAndDecreaseInputWidget extends StatelessWidget {
+class CounterInputWidget extends StatelessWidget {
   late Rx<int>? counter;
   final String unit;
   final String? title;
+  final Function()? onIncrement;
+  final Function()? onDecrement;
 
-  final controller = Get.put(IncreaseAndDecreaseInputController());
-
-  IncreaseAndDecreaseInputWidget({required this.counter, super.key, required this.unit, this.title});
+  CounterInputWidget({
+    super.key,
+    required this.counter,
+    required this.unit,
+    this.title,
+    this.onIncrement,
+    this.onDecrement,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +37,7 @@ class IncreaseAndDecreaseInputWidget extends StatelessWidget {
               Row(
                 children: [
                   IconButton(
-                    onPressed: () => controller.increasePress(counter!),
+                    onPressed: onIncrement,
                     icon: Icon(
                       Icons.add_rounded,
                       color: Theme.of(context).colorScheme.primaryContainer,
@@ -66,10 +71,10 @@ class IncreaseAndDecreaseInputWidget extends StatelessWidget {
                     ),
                   ),
                   IconButton(
-                    onPressed: () => controller.decreasePress(counter!),
+                    onPressed: onDecrement,
                     icon: SvgPicture.asset(
                       'assets/images/decrease.svg',
-                      color:  Theme.of(context).colorScheme.primaryContainer,
+                      color: Theme.of(context).colorScheme.primaryContainer,
                     ),
                   ),
                 ],
