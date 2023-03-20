@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:spy/core/constants/rout_path.dart';
@@ -15,6 +16,7 @@ class SpyGame extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      onInit: GetStorage.init,
       title: "Spy",
       theme: ImpoTheme.dark,
       textDirection: TextDirection.rtl,

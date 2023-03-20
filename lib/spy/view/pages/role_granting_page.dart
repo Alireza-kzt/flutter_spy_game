@@ -19,7 +19,7 @@ class RoleGrantingPage extends StatelessWidget {
             () => RoleGrantingWidget(
               isLastRole: SpyController.to.players.value - 1 == i,
               seen: RoleController.to.seen.value,
-              word: RoleController.to.spies.contains(i) ? ' جاسوسی که سوتون!' : 'دست انداز',
+              word: RoleController.to.spies.contains(i) ? 'جاسوسی' : RoleController.to.word,
               onGrantPressed: RoleController.to.onGrantPressed,
               onSeenPressed: RoleController.to.onSeenPressed,
               onFinishedPressed: RoleController.to.startGame,
