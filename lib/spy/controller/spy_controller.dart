@@ -4,7 +4,7 @@ import '../../core/constants/rout_path.dart';
 
 class SpyController extends GetxController {
   RxInt players = 4.obs;
-  RxInt minutes = 1.obs;
+  RxInt minutes = 5.obs;
   RxInt spies = 1.obs;
 
   static SpyController get to => Get.find();
