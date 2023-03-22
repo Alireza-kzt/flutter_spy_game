@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:spy/core/view/widgets/snackbar.dart';
 
 import '../../core/constants/rout_path.dart';
 
@@ -29,6 +30,11 @@ class SpyController extends GetxController {
   addSpy() {
     if (spies.value < players.value) {
       spies.value++;
+    } else {
+      showSnackBar(
+          'تعداد جاسوس',
+          'تعداد جاسوس باید از بازیکنان کمتر باشه.'
+      );
     }
   }
 
@@ -36,7 +42,17 @@ class SpyController extends GetxController {
     if (players.value > 4) {
       if (spies.value < players.value) {
         players.value--;
+      } else {
+        showSnackBar(
+            'تعداد بازیکنان',
+            'تعداد بازیکنان باید از جاسوس ها بیشتر باشه.'
+        );
       }
+    } else {
+      showSnackBar(
+        'تعداد بازیکنان',
+        'حداقل باید 4 بازیکن توی بازی باشن.'
+      );
     }
   }
 
