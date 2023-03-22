@@ -1,4 +1,4 @@
-package com.example.spy
+package com.cutrino.spy
 
 import io.flutter.embedding.android.FlutterActivity
 
