@@ -28,12 +28,12 @@ class SpyController extends GetxController {
   addMinute() => minutes.value++;
 
   addSpy() {
-    if (spies.value < players.value) {
+    if (spies.value < (players.value / 2).floor()) {
       spies.value++;
     } else {
       showSnackBar(
           'تعداد جاسوس',
-          'تعداد جاسوس باید از بازیکنان کمتر باشه.'
+          'تعداد جاسوس باید از نصف بازیکنان کمتر باشه.'
       );
     }
   }
