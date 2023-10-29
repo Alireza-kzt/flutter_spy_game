@@ -8,7 +8,6 @@ import 'package:spy/core/constants/rout_path.dart';
 import 'package:spy/core/view/themes/themes.dart';
 import 'package:spy/routes.dart';
 
-
 class SpyGame extends StatelessWidget {
   const SpyGame({Key? key}) : super(key: key);
 
@@ -18,7 +17,7 @@ class SpyGame extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       onInit: GetStorage.init,
       title: "Spy",
-      theme: ImpoTheme.dark,
+      theme: AppTheme.dark,
       textDirection: TextDirection.rtl,
       getPages: Routs.routs,
       locale: const Locale('fa', 'IR'),
@@ -27,13 +26,12 @@ class SpyGame extends StatelessWidget {
         data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
         child: ResponsiveWrapper.builder(
           AnnotatedRegion<SystemUiOverlayStyle>(
-            value: SystemUiOverlayStyle(
-              statusBarColor: Colors.transparent,
-              statusBarIconBrightness: context.isDarkMode ? Brightness.light : Brightness.dark,
-              statusBarBrightness: context.isDarkMode ? Brightness.dark : Brightness.light,
-            ),
-            child: child!
-          ),
+              value: const SystemUiOverlayStyle(
+                statusBarColor: Colors.transparent,
+                statusBarIconBrightness: Brightness.light,
+                statusBarBrightness: Brightness.dark,
+              ),
+              child: child!),
           defaultScale: true,
           breakpoints: const [
             ResponsiveBreakpoint.autoScale(360, name: MOBILE),

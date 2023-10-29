@@ -39,7 +39,7 @@ class CounterInputWidget extends StatelessWidget {
                     onPressed: onIncrement,
                     icon: Icon(
                       Icons.add_rounded,
-                      color: Theme.of(context).colorScheme.primaryContainer,
+                      color: Theme.of(context).colorScheme.onBackground,
                     ),
                   ),
                   Padding(
@@ -73,7 +73,7 @@ class CounterInputWidget extends StatelessWidget {
                     onPressed: onDecrement,
                     icon: Icon(
                       Icons.remove_rounded,
-                      color: Theme.of(context).colorScheme.primaryContainer,
+                      color: Theme.of(context).colorScheme.onBackground,
                     ),
                   ),
                 ],

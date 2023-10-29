@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../core/view/styles/button_style.dart';
-
 class RoleGrantingWidget extends StatelessWidget {
   final bool seen;
   final bool isLastRole;
@@ -51,12 +49,8 @@ class RoleGrantingWidget extends StatelessWidget {
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 22),
-        child: OutlinedButton(
+        child: ElevatedButton(
           onPressed: onPressed,
-          style: ButtonStyleFrom.of(context).largeOutlinedButtonStyle?.copyWith(
-                foregroundColor: MaterialStateProperty.all(Theme.of(context).colorScheme.onBackground),
-                side: MaterialStateProperty.all(BorderSide(color: Theme.of(context).colorScheme.primaryContainer)),
-              ),
           child: Text(buttonText),
         ),
       ),

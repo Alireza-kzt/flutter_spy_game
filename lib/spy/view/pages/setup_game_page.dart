@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:spy/spy/view/widgets/counter_input_widget.dart';
-import '../../../core/constants/rout_path.dart';
-import '../../../core/view/styles/button_style.dart';
 import '../../controller/spy_controller.dart';
 
 class SetupGamePage extends StatelessWidget {
@@ -18,7 +16,7 @@ class SetupGamePage extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(height: 24),
-              Image.asset('assets/images/spy.png', height: 230),
+              SvgPicture.asset('assets/images/spy.svg', height: 230),
               const SizedBox(height: 32),
               CounterInputWidget(
                 counter: SpyController.to.minutes,
@@ -51,7 +49,7 @@ class SetupGamePage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 22),
         child: ElevatedButton(
           child: const Text('شروع بازی'),
-          style: ButtonStyleFrom.of(context).largeElevatedButtonStyle?.copyWith(backgroundColor: MaterialStateProperty.all(Theme.of(context).colorScheme.primaryContainer)),
+
           onPressed: SpyController.to.startGrantingRoles,
         ),
       ),
