@@ -9,48 +9,45 @@ class SetupGamePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          controller: SpyController.to.scrollController,
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Column(
-            children: [
-              const SizedBox(height: 24),
-              SvgPicture.asset('assets/images/spy.svg', height: 230),
-              const SizedBox(height: 32),
-              CounterInputWidget(
-                counter: SpyController.to.minutes,
-                unit: 'دقیقه',
-                title: 'زمان',
-                onIncrement: SpyController.to.addMinute,
-                onDecrement: SpyController.to.reduceMinute,
-              ),
-              const SizedBox(height: 32),
-              CounterInputWidget(
-                counter: SpyController.to.players,
-                unit: 'نفر',
-                title: 'تعداد بازیکنان',
-                onIncrement: SpyController.to.addPlayer,
-                onDecrement: SpyController.to.reducePlayer,
-              ),
-              const SizedBox(height: 32),
-              CounterInputWidget(
-                counter: SpyController.to.spies,
-                unit: 'نفر',
-                title: 'تعداد جاسوس',
-                onIncrement: SpyController.to.addSpy,
-                onDecrement: SpyController.to.reduceSpy,
-              ),
-            ],
-          ),
+      body: Padding(
+        // controller: SpyController.to.scrollController,
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Column(
+          children: [
+            SvgPicture.asset('assets/images/spy.svg', height: 230),
+            const Spacer(flex: 70),
+            CounterInputWidget(
+              counter: SpyController.to.players,
+              unit: 'نفر',
+              title: 'تعداد بازیکنان',
+              onIncrement: SpyController.to.addPlayer,
+              onDecrement: SpyController.to.reducePlayer,
+            ),
+            const SizedBox(height: 32),
+            CounterInputWidget(
+              counter: SpyController.to.spies,
+              unit: 'نفر',
+              title: 'تعداد جاسوس',
+              onIncrement: SpyController.to.addSpy,
+              onDecrement: SpyController.to.reduceSpy,
+            ),
+            const SizedBox(height: 32),
+            CounterInputWidget(
+              counter: SpyController.to.minutes,
+              unit: 'دقیقه',
+              title: 'زمان',
+              onIncrement: SpyController.to.addMinute,
+              onDecrement: SpyController.to.reduceMinute,
+            ),
+            const Spacer(flex: 244)
+          ],
         ),
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 22),
         child: ElevatedButton(
-          child: const Text('شروع بازی'),
-
           onPressed: SpyController.to.startGrantingRoles,
+          child: const Text('شروع بازی'),
         ),
       ),
     );

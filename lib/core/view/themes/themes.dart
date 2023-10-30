@@ -42,17 +42,17 @@ class AppTheme {
       ),
       headlineSmall: TextStyle(
         color: colorScheme.onBackground,
-        fontWeight: FontWeight.w400,
-        fontSize: 24,
-        letterSpacing: 0,
+        fontSize: 16,
+        fontWeight: FontWeight.w600,
+        letterSpacing: -0.64,
       ),
 
       // TITLE
       titleLarge: TextStyle(
         color: colorScheme.onBackground,
-        fontWeight: FontWeight.w600,
-        fontSize: 24,
-        letterSpacing: 0,
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
+        letterSpacing: -0.64,
       ),
       titleMedium: TextStyle(
         color: colorScheme.onBackground,
@@ -159,6 +159,8 @@ class AppTheme {
         shape: Decorations.buttonShape,
         backgroundColor: darkColorScheme.primary,
         foregroundColor: darkColorScheme.onPrimary,
+        textStyle: darkTextTheme.headlineSmall?.copyWith(fontFamily: 'YekanBakh'),
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
         // minimumSize: Size.zero,
         // tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         elevation: 0.0,
@@ -171,6 +173,7 @@ class AppTheme {
         minimumSize: Size.zero,
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         elevation: 0.0,
+
       ),
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(

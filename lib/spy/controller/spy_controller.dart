@@ -12,15 +12,6 @@ class SpyController extends GetxController {
 
   static SpyController get to => Get.find();
 
-  @override
-  void onReady() {
-    scrollController.animateTo(
-      scrollController.position.maxScrollExtent,
-      duration: const Duration(milliseconds: 500),
-      curve: Curves.bounceIn,
-    );
-  }
-
   startGrantingRoles() => Get.toNamed(RoutePath.role);
 
   addPlayer() => players.value++;

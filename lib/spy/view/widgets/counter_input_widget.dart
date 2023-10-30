@@ -22,7 +22,7 @@ class CounterInputWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (title != null) Text(title!, style: context.textTheme.titleSmall),
+        if (title != null) Text(title!, style: context.textTheme.bodyMedium),
         if (title != null) const SizedBox(height: 8),
         Container(
           height: 45,
@@ -52,10 +52,28 @@ class CounterInputWidget extends StatelessWidget {
                   ),
                 ],
               ),
-              Obx(
-                () => Text(
-                  '${counter!.value} $unit',
-                  style: context.textTheme.titleMedium,
+              Expanded(
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Obx(
+                          () => Text(
+                            '${counter!.value}',
+                            style: context.textTheme.titleLarge,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 4),
+                    Expanded(
+                      child: Text(
+                        unit,
+                        style: context.textTheme.titleLarge,
+                      ),
+                    ),
+                  ],
                 ),
               ),
               Row(
